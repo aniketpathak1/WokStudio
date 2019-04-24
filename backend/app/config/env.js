@@ -1,5 +1,5 @@
 const env = {
-    database: 'wokstudio',
+    database: 'WokStudio',
     username: 'root',
     password: 'Welcome@123',
     host: 'localhost',

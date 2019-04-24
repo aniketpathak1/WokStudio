@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 
 const cors = require('cors');
 const corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: 'http://localhost:8081',
     optionSuccessStatus: 200
 };
 
@@ -16,7 +16,7 @@ const db = require('./app/config/db.config.js');
 require('./app/route/customer.route.js')(app);
 
 //Create server
-var server = app.listen(8080, function() {
+var server = app.listen(8081, function() {
     let host = server.address().address;
     let port = server.address().port;
 

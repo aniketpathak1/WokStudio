@@ -1,30 +1,41 @@
+var mysql = require('mysql');
 const db = require('../config/db.config.js');
 var bcrypt = require('bcrypt');
+const saltRounds = 10;
 const Customer = db.customers;
 
 
 exports.login = (req, res) => {
-    let cust = req.body;
+    let user = req.body;
     let username = req.body.username;
-    let pass = req.body.password;
-    console.log('customer', cust, 'username', username, 'password', pass);
+    let password = req.body.password;
+    let userId;
+    let query = `select id, pwd from customer where username = '${username}'`;
+    db.sequelize.query(query,
+    {
+      type: db.sequelize.QueryTypes.SELECT 
+    })
+    .then((rows) => {
+        //console.log("hash password from db", rows[0]['pwd']);
+        bcrypt.compare(password, rows[0]['pwd'], function(err, response) {
+          // res == true
+          if(response) {
+            userId = rows[0]['id'];
+            console.log("password matched with user id: ", userId);
+            res.json(userId);
+          }
+          else{
+            console.log("wrong password");
+          }
+      });
+    });
+    console.log('user', user);
 };
 
-exports.cryptPassword = (password, callback) => {
-    bcrypt.genSalt(10, function(err, salt) {
-     if (err) 
-       return callback(err);
+cryptPassword = (password) => {
+  console.log("password", password);
+  let hashPass = bcrypt.hashSync(password, 10);
+  console.log("hashPass", hashPass); 
+  return hashPass;
+};
  
-     bcrypt.hash(password, salt, function(err, hash) {
-       return callback(err, hash);
-     });
-   });
- };
- 
- exports.comparePassword = (plainPass, hashword, callback) => {
-    bcrypt.compare(plainPass, hashword, function(err, isPasswordMatch) {   
-        return err == null ?
-            callback(null, isPasswordMatch) :
-            callback(err);
-    });
- };

@@ -10,9 +10,7 @@ import { UserLogin } from 'src/app/models/login.model';
   })
 
   export class LoginComponent implements OnInit {
-    user: any;
-    username
-    password;
+    user: UserLogin;
     ngOnInit(): void {
         
     }
@@ -22,11 +20,14 @@ import { UserLogin } from 'src/app/models/login.model';
         let userObj = {username:'', password:''};
         userObj.username = username;
         userObj.password = password;
-        console.log(userObj.username, userObj.password);
+        //let cryptPass = '';
+        console.log("userObj", userObj.username, userObj.password);
         return this.loginService.login(userObj)
         .subscribe(
             (res) => {
-                this.user = res;
+                //this.user.id = res;
+                console.log("login component response - user id " , res);
+                this.user.id = res;
             }
         );
     }
