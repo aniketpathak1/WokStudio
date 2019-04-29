@@ -1,7 +1,7 @@
 const env = {
     database: 'WokStudio',
     username: 'root',
-    password: 'password',
+    password: 'Welcome@123',
     host: 'localhost',
     dialect: 'mysql',
     pool: {
