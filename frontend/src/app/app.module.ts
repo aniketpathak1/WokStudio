@@ -7,13 +7,19 @@ import { AppComponent } from './components/AppComponent/app.component';
 import { LandingPage } from './components/LandingPage/landing.component';
 import { LoginComponent } from './components/LoginComponent/login.component';
 import { AdminComponent } from './components/AdminComponent/admin.component';
+import { SignUpComponent } from './components/SignUpComponent/signup.component';
+import { HomeComponent } from './components/HomeComponent/home.component';
+import { UserAccountComponent } from './components/UserAccountComponent/user_account.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LandingPage,
         LoginComponent,
-        AdminComponent
+        AdminComponent,
+        SignUpComponent,
+        HomeComponent,
+        UserAccountComponent
     ],
     imports: [
         BrowserModule,

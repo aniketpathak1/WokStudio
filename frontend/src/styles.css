@@ -1,1 +1,134 @@
 /* You can add global styles to this file, and also import other style files */
+/*main.css*/
+
+div.site{
+    margin: 0 !important;
+    height: 100% !important;
+}
+
+.container-fluid{
+    position: relative;
+    padding: 0;
+    margin-top: 62px;
+    width: 100%;
+    height: auto; /*2400px*/
+    overflow: hidden;
+    display: inline-block;
+    background-color: #f2f2f9;
+}
+
+header{
+    background-color: #f44242 !important;
+}
+
+.logo-img{
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-brand{
+    font-weight: 500;
+}
+
+.navbar-text{
+    color: white !important;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.left-column{
+    position: relative;
+    padding: 10px;
+    height: 700px;
+    float: left;
+    overflow: hidden;
+    background-color: #f2f2f9;
+}
+
+.left-column h3, .right-column h4{
+    text-align: left;
+    width: 100%;
+}
+
+.right-column{
+    position: relative;
+    padding: 0;
+    height: auto;
+    /*height: 2400px;*/
+    float: right;
+    overflow: hidden;
+    background-color: white;
+}
+
+#items-container{
+    position: relative;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px; 
+}
+
+#pagination-container{
+    position: relative;
+    height: 120px;
+    padding: 20px;
+    border-top: solid;
+}
+
+.page-link{
+    color: #f44242;
+}
+
+.page-item.active .page-link{
+    color: white;
+    background-color: #f44242 !important;
+    border-color: #f44242 !important;
+}
+
+a{
+    cursor: pointer;
+}
+
+h4{
+    text-align: right;
+    font-weight: 700;
+}
+
+h4 a, .dropdown-item{
+    text-decoration: none;
+    padding: 10px;
+    color: navy;
+}
+
+h4 a:hover , .dropdown-item:hover{
+    text-decoration: none;
+    color: purple;
+}
+
+h4 a:active {
+    text-decoration: none;
+    color: red;
+}
+
+footer{
+    height: 80px;
+    color: white;
+    font-size: 14px;
+    background-color: #28a745 /*#8a1009*/;
+}
+
+
+@media screen and (max-width: 650px){
+
+.container-fluid{
+    margin-top: 80px;
+}
+}
+
+@media screen and (max-width: 575px){
+
+.container-fluid{
+    margin-top: 100px;
+}
+}

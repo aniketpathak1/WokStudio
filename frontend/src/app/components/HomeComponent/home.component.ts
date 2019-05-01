@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
+declare var $:any;
+
 @Component({
     selector: 'app-landing',
     templateUrl: './home.component.html',
@@ -12,5 +14,16 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
     ngOnInit(): void {
     }
 
-    
+    ngAfterViewInit(){
+    $(document).ready(function(){
+      var _this = this;
+      $(".dropdown-toggle").hover(function(){
+          $(this).addClass("addButtonEffect");
+          $(this).removeClass("removeButtonEffect"); 
+          }, function(){
+          $(this).removeClass("addButtonEffect"); 
+          $(this).addClass("removeButtonEffect"); 
+      });
+  });
+}
   }

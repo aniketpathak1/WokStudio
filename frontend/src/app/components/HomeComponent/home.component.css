@@ -14,14 +14,16 @@
 
 .dropdown-toggle{
     font-weight: 600;
+    color: white !important;
 }
 
 .dropdown-menu a{
     color: #f44242;
 }
 
-.dropdown-menu a: hover{
+.dropdown-menu a:hover{
     color: white;
+    background-color: #f44242;
 }
 
 .addButtonEffect{
@@ -173,14 +175,14 @@
     position: relative;
     width: 240px;
     height: 50px;
-    margin-left: 830px;
+    margin-left: 800px;
     margin-top: 50px;
     text-align: right;
     color: white;
     font-weight: 400;
 }
 
-.item-place-order a: hover{
+.item-place-order a:hover{
     background-color: #28a745 !important;
 }
 
@@ -211,6 +213,8 @@
 
 .nav-link.active{
     background-color: #f44242 !important;
+    color: white;
+    font-weight: 500;
 }
 
 .btn-link{
