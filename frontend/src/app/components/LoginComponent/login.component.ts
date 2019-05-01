@@ -27,7 +27,7 @@ import { UserLogin } from 'src/app/models/login.model';
             (res) => {
                 //this.user.id = res;
                 console.log("login component response - user id " , res);
-                this.user.id = res;
+                this.router.navigate(['admin']);
             }
         );
     }

@@ -11,7 +11,7 @@ const httpOptions = {
 })
 
 export class SignUpService {
-    private signUpUrl = 'http://localhost:8081/api/customer/signup';  // URL to web api
+    private signUpUrl = 'http://localhost:8082/api/customer/signup';  // URL to web api
     options: any;
     constructor(private http: HttpClient) { }
 

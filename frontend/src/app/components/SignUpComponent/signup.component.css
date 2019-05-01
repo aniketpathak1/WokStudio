@@ -1,0 +1,67 @@
+/*signin.css*/
+
+.container{
+    position: relative;
+    margin-top: 60px;
+    height: 620px;
+    overflow: hidden;
+    background-color: rgb(0,0,0,0.11);
+    background-image: url("../../../assets/Images/background-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: color;
+}
+
+#signin-window{
+    height: 580px;
+    margin-top : 1vh;
+    margin-left : 20vw;
+    margin-bottom : 5vh;
+    margin-right : 20vw; 
+    border : solid;
+    background-color: white;
+    z-index: 10;
+}
+#signup-window{
+    height: 610px;
+    margin-top : 1vh;
+    margin-left : 20vw;
+    margin-bottom : 5vh;
+    margin-right : 20vw; 
+    border : solid;
+    background-color: white;
+    z-index: 10;
+}
+
+.text-heading{
+    text-align: center;
+    font-weight: 1000;
+    font-size: 15px;
+    color: #f44242;
+}
+
+#admin-checkbox{
+    text-align: right;
+    width: 49%;
+    float: right;
+}
+
+#firstname{
+    width: 49%;
+    float: left;
+}
+
+#lastname{
+    width: 50%;
+    float: right;
+}
+
+#signin-button{
+    width: 50%;
+    background-color: #f44242;
+}
+
+#signup-button{
+    width: 100%;
+    background-color: #f44242;
+}

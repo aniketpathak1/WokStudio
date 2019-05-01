@@ -1,0 +1,162 @@
+<div class=row>
+    <div class=admin1>
+        <h2 class="account-nav-header">Admin DashBoard</h2>
+        <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="link" data-toggle="pill" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true" (click)="AddProduct()">Add Product</a>
+                <a class="nav-link active" id="link1" data-toggle="pill" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true" (click)="DisplayProducts()">Display Product</a>
+                <a class="nav-link active" id="link2" data-toggle="pill" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true" (click)="AddAdmin()">Add Admin</a>
+            </div>
+        </div>
+    </div>
+    <div class=reload id="include" *ngIf="action === 'addProducts'">
+        <div class="head">
+            <h2> Add Product </h2>
+        </div>
+        <div>
+            <div class=add_p>
+
+                <select [(ngModel)]='cusine' class="custom-select">
+                    <option [value]="cusine" *ngFor="let cusine of cusines">{{cusine}}</option>
+                </select>
+
+                <select [(ngModel)]='foodType' class="custom-select">
+                    <option [value]="foodType" *ngFor="let foodType of foodTypes">{{foodType}}</option>
+                </select>
+
+                <select [(ngModel)]='category' class="custom-select">
+                    <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+                </select>
+
+                <select [(ngModel)]='foodPref' class="custom-select">
+                    <option [value]="foodPref" *ngFor="let foodPref of foodPreferences">{{foodPref}}</option>
+                </select>
+
+
+                <div class="form-group">
+                    <label for="Name">Product Name</label>
+                    <input type="text" [(ngModel)]='Name' name="Name" class="form-control"
+                        placeholder="Enter Product Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Product Price</label>
+                    <input type="text" [(ngModel)]='price' name="price" class="form-control"
+                        placeholder="Enter Product Price">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload Product Image</span>
+                        <br />
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" [(ngModel)]='Image' name="Image" class="custom-file-input"
+                            id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+
+                </div>
+                <button (click)="AddProductToDB(cusine,foodType,category,foodPref,Name,price,Image)" type="submit"
+                    class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class=reload id="include" *ngIf="action === 'showProducts'">
+        <div class="list-group" id="display">
+            <h2 class="heading"> Product </h2>
+            <a id="d1" class="list-group-item list-group-item-action" (click)="UpdateDeleteProd()">Dapibus ac facilisis
+                in</a>
+            <a id="d1" class="list-group-item list-group-item-action">Morbi leo risus</a>
+            <a class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+        </div>
+    </div>
+    <div class=reload id="include" *ngIf="action === 'addAdmin'">
+        <div class="head">
+            <h2> Add New Admin </h2>
+        </div>
+        <div class=add_p>
+            <form action="addperson.php" method="post">
+                <div class="form-group">
+                    <label>FirstName</label>
+                    <input type="text" [(ngModel)]="FirstName" name="FirstName" class="form-control" placeholder="Enter FirstName">
+                </div>
+                <div class="form-group">
+                    <label>LastName</label>
+                    <input type="text" [(ngModel)]="LastName" name="LastName" class="form-control" placeholder="Enter LastName">
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" [(ngModel)]="Email" class="form-control" id="exampleInputEmail1" name="Email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label>UserName</label>
+                    <input type="text" [(ngModel)]="UserName" name="UserName" class="form-control" placeholder="Enter UserName">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" [(ngModel)]="pwd" name="pwd" class="form-control" id="pwd"
+                        placeholder="Password">
+                </div>
+                <button (click)="AddAdminToDB(FirstName, LastName, Email, UserName,pwd)" type="submit" class="btn btn-primary">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+    <div class=reload id="include" *ngIf="action === 'updateDeleteProd'">
+        <div class=add_p>
+            <h2 class="ud"> Update and Delete Product </h2>
+            <div class=add_p>
+
+                <select [(ngModel)]='cusine' class="custom-select">
+                    <option [value]="cusine" *ngFor="let cusine of cusines">{{cusine}}</option>
+                </select>
+
+                <select [(ngModel)]='foodType' class="custom-select">
+                    <option [value]="foodType" *ngFor="let foodType of foodTypes">{{foodType}}</option>
+                </select>
+
+                <select [(ngModel)]='category' class="custom-select">
+                    <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+                </select>
+
+                <select [(ngModel)]='foodPref' class="custom-select">
+                    <option [value]="foodPref" *ngFor="let foodPref of foodPreferences">{{foodPref}}</option>
+                </select>
+
+
+                <div class="form-group">
+                    <label for="Name">Product Name</label>
+                    <input type="text" [(ngModel)]='Name' name="Name" class="form-control"
+                        placeholder="Enter Product Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Product Price</label>
+                    <input type="text" [(ngModel)]='price' name="price" class="form-control"
+                        placeholder="Enter Product Price">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload Product Image</span>
+                        <br />
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" [(ngModel)]='Image' name="Image" class="custom-file-input"
+                            id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+
+                </div>
+                <button (click)="Update(Name, price, Image, foodTypeControl, cusineControl, categoryControl)"
+                    type="submit" class="btn btn-primary">Update</button>
+                <button (click)="Delete(Name, price, Image, foodTypeControl, cusineControl, categoryControl)"
+                    type="submit" class="b1 btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

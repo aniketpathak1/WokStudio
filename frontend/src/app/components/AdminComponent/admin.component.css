@@ -1,0 +1,164 @@
+.nav-pills .nav-link{
+    width: 20vw !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+h2{
+    color: white !important;
+}
+.admin1{
+    height: 94vh !important;
+    width: 24vw;
+    background: white;
+    background: url("https://about.whisk.com/wp-content/uploads/2014/12/dark-wood-and-vegetables.jpg") !important;
+}
+.row{
+    background-color: #e0d7d7 !important;
+      width: 100vw !important;
+    height: 100vh !important;
+    margin-left: 0px !important;
+    padding-left: 15px !important;
+
+}
+.account-nav-header{
+    margin-top: 1.5vw;
+    margin-left: 1.5vw;
+}
+.reload{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: url("https://about.whisk.com/wp-content/uploads/2014/12/dark-wood-and-vegetables.jpg") !important;
+    background: white;
+    width: 72vw;
+    height: 94vh !important;
+    float: right;
+    margin-left: 30px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+
+.admin1{
+    margin-top: 20px !important; 
+ margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+
+
+.add_p{
+	margin:1.5vw;
+}
+.form-group{
+	margin-bottom: 3vh !important;
+}
+.form-control{
+	margin-bottom: 3vh !important;
+}
+.input-group{
+
+padding-top: 2.0vh !important;
+padding-bottom: 2.5vh;
+}
+
+.custom-select{
+	margin-bottom: 3.0vh !important;
+	margin-top: 1vh;
+}
+.ud{
+    margin-left: 1.3vw;
+}
+.head{
+	margin: 1.5vw;
+
+}
+label{
+	color: white !important;
+}
+.list-group-item{
+	margin-left:1.5vw;
+	margin-right:-1.5vw;
+}
+.heading{
+	margin: 1.5vw;
+}
+.list-group-item-action
+{
+	width: 96% !important;
+}
+
+.b1{
+    margin-left: 50px !important;
+}
+
+@media screen and (max-height: 600px)
+{
+	.add_p{
+	margin:0vw !important;
+}
+.form-group{
+margin-bottom: 0vh !important;
+}
+.form-control{
+	margin-bottom: 0vh !important;
+}
+.input-group{
+padding-top: 0vh !important;
+padding-bottom: 0vh !important;
+}
+.custom-select{
+	margin-top: 0vh !important;
+	margin-bottom: 0vh !important;
+}
+.head{
+	margin: 0vw !important;
+	
+}
+.cs1{
+	margin-bottom: 0vh !important;
+}
+}
+
+
+@media screen and (max-height: 520px)
+{
+    .nav-pills .nav-link{
+    margin-top: 0vh !important;
+    margin-bottom: 0vh !important;
+
+}}
+
+
+@media screen and (max-width: 1100px)
+{
+    .nav-pills .nav-link{
+    width: 80vw !important;
+}
+.admin1{
+    height: 50vh !important;
+    width: 85vw !important;
+    background-color: white !important;
+    margin-right: 20vw !important;
+        margin-top: 10vh !important; 
+ margin-bottom: 10vh !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+.account-nav-header{
+    padding: 10px;
+}
+.reload{
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+    width: 85vw !important;
+    height: 100vh !important;
+    float: right;
+    margin-left: 0vw !important;
+    margin-right: 12vw !important;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+.row{
+    width: 100vw !important;
+    height: 200vh !important;
+    margin-left: 0vw !important;
+    padding-left: 5vw !important;
+}
+
+}
+
