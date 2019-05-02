@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { LoginService } from 'src/app/services/LoginService/login.service';
-//import { UserSignUp } from 'src/app/models/login.model';
+//import { LoginService } from 'src/app/services/LoginService/login.service';
+//import { UserSignUp } from 'src/app/models/signup.model';
+import { SignUpService } from 'src/app/services/SignUpService/signup.service';
 declare var $:any;
 
 @Component({
@@ -15,11 +16,26 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  constructor(private loginService: LoginService, private router: Router, public activatedRoute: ActivatedRoute) { }
+  constructor(private signupService: SignUpService, private router: Router, public activatedRoute: ActivatedRoute) { }
 
-  //UserSignUp(username, password){
+  UserSignUp(firstnameinput, lastnameinput, emailinput, usernameinput, passwordinput, phoneinput)
+  {
+  let userObj = { firstnameinput: '', lastnameinput: '', emailinput: '', usernameinput: '', passwordinput: '', phoneinput: '' };
+        userObj.firstnameinput = firstnameinput;
+        userObj.lastnameinput = lastnameinput;
+        userObj.emailinput = emailinput;
+        userObj.usernameinput = usernameinput;
+        userObj.passwordinput = passwordinput;
+        userObj.phoneinput = phoneinput;
 
-  //}
+        //let cryptPass = '';
+        console.log("userObj", userObj.usernameinput, userObj.firstnameinput, userObj.lastnameinput);
+        return this.signupService.SignUp(userObj)
+            .subscribe(
+                    
+                
+            );
+  }
 
   navigate_signin() {
     this.router.navigate(['login'], {

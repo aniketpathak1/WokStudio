@@ -12,27 +12,27 @@ const httpOptions = {
 export class AdminServices {
     options: any;
     constructor(private http: HttpClient) { }
-    private addProdUrl = 'http://localhost:8082/api/addProduct';
-    private addAdminUrl = 'http://localhost:8082/api/addAdmin';
+    private addProdUrl = 'http://localhost:8081/api/addProduct';
+    private addAdminUrl = 'http://localhost:8081/api/addAdmin';
     getProductCategories(): Observable<any> {
         console.log("admin services");
         //console.log(this.http.get<any>('http://localhost:8082/api/productcategory'));
-        return this.http.get<any>('http://localhost:8082/api/productCategories');
+        return this.http.get<any>('http://localhost:8081/api/productCategories');
     }
     getProductTypes(): Observable<any> {
         console.log("admin services");
         //console.log(this.http.get<any>('http://localhost:8082/api/productcategory'));
-        return this.http.get<any>('http://localhost:8082/api/producTypes');
+        return this.http.get<any>('http://localhost:8081/api/producTypes');
     }
     getProductCuisines(): Observable<any> {
         console.log("admin services");
         //console.log(this.http.get<any>('http://localhost:8082/api/productcategory'));
-        return this.http.get<any>('http://localhost:8082/api/productCuisines');
+        return this.http.get<any>('http://localhost:8081/api/productCuisines');
     }
     getProductPreferences(): Observable<any> {
         console.log("admin services");
         //console.log(this.http.get<any>('http://localhost:8082/api/productcategory'));
-        return this.http.get<any>('http://localhost:8082/api/productPreferences');
+        return this.http.get<any>('http://localhost:8081/api/productPreferences');
     }
 
     AddProductinDB(obj): Observable<any> {

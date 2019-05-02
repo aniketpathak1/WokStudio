@@ -17,29 +17,29 @@
             </span>
             <div class="form-group" id="firstname">
                 <label>First Name</label>
-                <input class="form-control" id="firstname-input" placeholder="First name">
+                <input class="form-control" [(ngModel)] = 'firstnameinput' name="firstnameinput" id="firstname-input" placeholder="First name">
             </div>
             <div class="form-group" id="lastname">
                 <label>Last Name</label>
-                <input class="form-control" id="lastname-input" placeholder="Last name">
+                <input class="form-control" [(ngModel)] = 'lastnameinput' name="lastnameinput" id="lastname-input" placeholder="Last name">
             </div>
             <div class="form-group" id="email">
                 <label>Email address</label>
-                <input class="form-control" id="email-input" placeholder="example@domain.com">
+                <input class="form-control" [(ngModel)] = 'emailinput' name="emailinput" id="email-input" placeholder="example@domain.com">
             </div>
             <div class="form-group" id="username">
                 <label>Username</label>
-                <input type="username" class="form-control" id="username-input" placeholder="Username">
+                <input type="username" [(ngModel)] = 'usernameinput' name="usernameinput" class="form-control" id="username-input" placeholder="Username">
             </div>
             <div class="form-group" id="password">
                 <label>Password</label>
-                <input type="password" class="form-control" id="password-input" placeholder="Password (8 characters minimun))">
+                <input type="password" [(ngModel)] = 'passwordinput' name="passwordinput" class="form-control" id="password-input" placeholder="Password (8 characters minimun))">
             </div>
             <div class="form-group" id="contactno">
                 <label>Contact Number</label>
-                <input class="form-control" placeholder="xxx-xxx-xxxx">
+                <input class="form-control" [(ngModel)] = 'phoneinput' name="phoneinput" id="phone-input" placeholder="xxx-xxx-xxxx">
             </div>
-            <button type="submit" class="btn btn-primary" id="signup-button">Create Account</button>
+            <button type="submit" (click)="UserSignUp(firstnameinput, lastnameinput, emailinput, usernameinput, passwordinput, phoneinput)" class="btn btn-primary" id="signup-button">Create Account</button>
         </form>
     <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click) = "navigate_signin()" >&nbsp;&nbsp;Already a user? Sign In</a>
