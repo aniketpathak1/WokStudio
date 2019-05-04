@@ -11,14 +11,16 @@ const httpOptions = {
 })
 
 export class SignUpService {
-    private signUpUrl = 'http://localhost:8081/api/customer/signup';  // URL to web api
     options: any;
     constructor(private http: HttpClient) { }
+
+    private signUpUrl = 'http://localhost:8082/api/signUp';
 
     SignUp(obj): Observable<any> {
         const url = `${this.signUpUrl}`;
         return this.http.post<any>(url, obj, httpOptions);
     }
+
 }
 
 

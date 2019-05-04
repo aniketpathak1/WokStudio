@@ -1,5 +1,11 @@
 /*home.css*/
-
+.searchBtn {
+    width: 20%;
+    height: 5%;
+    margin: 24px 0 0 7px;
+    text-align: center;
+    cursor: pointer;
+}
 .btn{
     height: 46px;
     color: white;
@@ -163,14 +169,16 @@
     width: auto;
 }
 
-.item-rating, .item-price, .item-quantity{
+.item-rating, .item-price, .item-quantity, .item-fav{
     position: relative;
     margin-right: 20px;
     width: 100px;
     height: 45px;
     float: right;
 }
-
+.item-fav{
+    cursor: pointer;
+}
 .item-place-order{
     position: relative;
     width: 240px;

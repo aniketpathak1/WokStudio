@@ -2,17 +2,16 @@
     width: 20vw !important;
     margin-top: 20px !important;
     margin-bottom: 10px !important;
+    background-color: #ff0050 !important;
 }
-h2{
-    color: white !important;
-}
+
 .admin1{
     height: 94vh !important;
     width: 24vw;
-    background: white;
-    background: url("https://about.whisk.com/wp-content/uploads/2014/12/dark-wood-and-vegetables.jpg") !important;
+      background-color: white !important;
 }
 .row{
+    /*background: url("https://about.whisk.com/wp-content/uploads/2014/12/dark-wood-and-vegetables.jpg") !important;*/
     background-color: #e0d7d7 !important;
       width: 100vw !important;
     height: 100vh !important;
@@ -25,9 +24,9 @@ h2{
     margin-left: 1.5vw;
 }
 .reload{
+    overflow-y:auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: url("https://about.whisk.com/wp-content/uploads/2014/12/dark-wood-and-vegetables.jpg") !important;
     background: white;
     width: 72vw;
     height: 94vh !important;
@@ -39,9 +38,55 @@ h2{
 .admin1{
     margin-top: 20px !important; 
  margin-bottom: 20px;
+ 
+}
+.btn-primary{
+    background-color:#ff0050 !important;
+border-color: #ff0050 !important;
+}
+@media screen and (max-height: 520px)
+{
+    .nav-pills .nav-link{
+    margin-top: 0vh !important;
+    margin-bottom: 0vh !important;
+
+}}
+@media screen and (max-width: 1100px)
+{
+    .nav-pills .nav-link{
+    width: 80vw !important;
+}
+.admin1{
+    height: 50vh !important;
+    width: 85vw !important;
+    overflow-y:auto;
+    background-color: white !important;
+    margin-right: 20vw !important;
+        margin-top: 10vh !important; 
+ margin-bottom: 10vh !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
 }
+.account-nav-header{
+    padding: 10px;
+}
+.reload{
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+    width: 85vw !important;
+    height: 100vh !important;
+    float: right;
+    margin-left: 0vw !important;
+    margin-right: 12vw !important;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+.row{
+    width: 100vw !important;
+    height: 200vh !important;
+    margin-left: 0vw !important;
+    padding-left: 5vw !important;
+}
 
+}
 
 .add_p{
 	margin:1.5vw;
@@ -69,9 +114,7 @@ padding-bottom: 2.5vh;
 	margin: 1.5vw;
 
 }
-label{
-	color: white !important;
-}
+
 .list-group-item{
 	margin-left:1.5vw;
 	margin-right:-1.5vw;

@@ -1,10 +1,6 @@
 var mysql = require('mysql');
 const db = require('../config/db.config.js');
 var bcrypt = require('bcrypt');
-const saltRounds = 10;
-const jwt = require('jsonwebtoken');
-const expressJwt = require('express-jwt');
-
 exports.login = (req, res) => {
   let user = req.body;
   let username = req.body.username;
@@ -13,7 +9,7 @@ exports.login = (req, res) => {
   console.log("adminCheck", adminCheck);
   let userId;
   if(!adminCheck){
-    let query = `select id, pwd from customer where username = '${username}' AND pwd='${password}'`;
+    let query = `select id from userprofile where username = '${username}' AND pwd='${password}'`;
     db.sequelize.query(query,
     {
       type: db.sequelize.QueryTypes.SELECT 
@@ -39,11 +35,11 @@ exports.login = (req, res) => {
           let response = {user: 'user'};
           console.log(response);
           res.json(response);
+    //      res.send({token});
           
     }
     }
   );
-  //console.log('user', user);
 }
 else{
       let query = `select id, pwd from useradmin where username = '${username}' AND pwd='${password}'`;
@@ -72,11 +68,11 @@ else{
               let response = {user: 'admin'};
               console.log(response);
               res.json({user: 'admin'});
+
               
         }
     }
   );
-  //console.log('user', user);
 
 }
 ;
@@ -90,7 +86,8 @@ return hashPass;
 };
 
 
-exports.UserSignUp = (req, res) => {
+exports.userSignUp = (req, res) => {
+  console.log("customer.controller.js");
   let signUp = req.body;
   let username = signUp.username;
   let firstname = signUp.firstname;
@@ -101,17 +98,25 @@ exports.UserSignUp = (req, res) => {
   let confirmpwd = signUp.confirmpwd;
   let hashPass;
 
-  if(password == confirmpwd){
-    hashPass = bcrypt.genSalt(10, function(err, salt) {
-      if (err) 
-        return callback(err);
+  let data = req.body;
+  let hashpwd = cryptPassword(data.newpwd);
+  bcrypt.compare(data.confirmpwd, hashpwd, (err, response) => {
+      if (response) {
+     //     let query = `update userprofile set pwd = '${hashpwd}' where id = ${data.id}`;
+
+
+ // if(password == confirmpwd){
+  //   hashPass = bcrypt.genSalt(10, function(err, salt) {
+  //     if (err) 
+  //       return callback(err);
   
-      bcrypt.hash(password, salt, function(err, hash) {
-        return callback(err, hash);
-      });
-    });
-  }
-  if(hashPass){
+  //     bcrypt.hash(password, salt, function(err, hash) {
+  //       return callback(err, hash);
+  //     });
+  //   });
+  // }
+  // if(hashPass){
+  //   console.log("in hashPass");
     let query1 = `insert into userprofile (userId, firstName, lastName, emailAddress, phoneint) values (${username}, ${firstname}, ${lastname}, ${email}, ${phone} )`;
     let query2 = `insert into customer (username, pwd) values (${username}, ${hashPass})`;
     db.sequelize.query(query1,
@@ -123,5 +128,6 @@ exports.UserSignUp = (req, res) => {
         type: db.sequelize.QueryTypes.INSERT 
       })
   }
-} 
+} )
+}
 }

@@ -24,6 +24,11 @@
     color: white;
 }
 
+.success-msg{
+    color: green;
+    font-weight: 400;
+}
+
 .addButtonEffect{
     border-color: white;
     background-color: #28a745 !important;
@@ -169,15 +174,12 @@
     float: right;
 }
 
-.item-place-order{
+.item-remove{
     position: relative;
-    width: 240px;
-    height: 50px;
-    margin-left: 830px;
+    margin-left: 800px;
     margin-top: 50px;
     text-align: right;
-    color: white;
-    font-weight: 400;
+    cursor: pointer;
 }
 
 .item-place-order a:hover{

@@ -1,6 +1,6 @@
 <header class="navbar fixed-top navbar-dark">
     <a title="Wok Studio" class="navbar-brand" href="index.html">
-        <img src="Images/ws_favicon.png" class="d-inline-block align-top logo-img" alt="">
+        <img src="../../../assets/Images/WS_favicon.png" class="d-inline-block align-top logo-img" alt="">
         Wok Studio
     </a>
     <span class="navbar-text">
@@ -11,35 +11,37 @@
 
 <div class="container">
     <div id="signup-window">
-        <form class="px-4 py-3">
+        <form class="px-4 py-3" id="signup-form">
             <span class="text-heading">
                 <h5>Create your account</h5>
             </span>
             <div class="form-group" id="firstname">
                 <label>First Name</label>
-                <input class="form-control" [(ngModel)] = 'firstnameinput' name="firstnameinput" id="firstname-input" placeholder="First name">
+                <input class="form-control" id="firstname-input" placeholder="First name" [(ngModel)] = 'firstname' name='firstname'>
             </div>
             <div class="form-group" id="lastname">
                 <label>Last Name</label>
-                <input class="form-control" [(ngModel)] = 'lastnameinput' name="lastnameinput" id="lastname-input" placeholder="Last name">
+                <input class="form-control" id="lastname-input" placeholder="Last name" [(ngModel)] = 'lastname' name='lastname'>
             </div>
+        </form>
+        <form class="px-4 py-3">
             <div class="form-group" id="email">
                 <label>Email address</label>
-                <input class="form-control" [(ngModel)] = 'emailinput' name="emailinput" id="email-input" placeholder="example@domain.com">
+                <input class="form-control" id="email-input" placeholder="example@domain.com" [(ngModel)] = 'email' name='email'>
             </div>
             <div class="form-group" id="username">
                 <label>Username</label>
-                <input type="username" [(ngModel)] = 'usernameinput' name="usernameinput" class="form-control" id="username-input" placeholder="Username">
+                <input type="username" class="form-control" id="username-input" placeholder="Username" [(ngModel)] = 'username' name='username'>
             </div>
             <div class="form-group" id="password">
                 <label>Password</label>
-                <input type="password" [(ngModel)] = 'passwordinput' name="passwordinput" class="form-control" id="password-input" placeholder="Password (8 characters minimun))">
+                <input type="password" class="form-control" id="password-input" placeholder="Password (8 characters minimun))" [(ngModel)] = 'password' name='password'>
             </div>
             <div class="form-group" id="contactno">
                 <label>Contact Number</label>
-                <input class="form-control" [(ngModel)] = 'phoneinput' name="phoneinput" id="phone-input" placeholder="xxx-xxx-xxxx">
+                <input class="form-control" id="contact-input" placeholder="xxx-xxx-xxxx" [(ngModel)] = 'contact' name='contact'>
             </div>
-            <button type="submit" (click)="UserSignUp(firstnameinput, lastnameinput, emailinput, usernameinput, passwordinput, phoneinput)" class="btn btn-primary" id="signup-button">Create Account</button>
+            <button type="submit" class="btn btn-primary" (click)="register(firstname, lastname, email, username, password, contact)" id="signup-button" >Create Account</button>
         </form>
     <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click) = "navigate_signin()" >&nbsp;&nbsp;Already a user? Sign In</a>

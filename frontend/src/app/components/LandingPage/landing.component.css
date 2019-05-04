@@ -107,6 +107,7 @@ h4 a{
     text-decoration: none;
     padding: 10px;
     color: navy;
+    cursor: pointer;
 }
 
 h4 a:hover {

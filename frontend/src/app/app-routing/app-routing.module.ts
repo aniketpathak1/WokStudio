@@ -6,6 +6,8 @@ import { AdminComponent } from '../components/AdminComponent/admin.component';
 import { SignUpComponent } from '../components/SignUpComponent/signup.component';
 import { HomeComponent } from '../components/HomeComponent/home.component';
 import { UserAccountComponent } from '../components/UserAccountComponent/user_account.component';
+import { CartComponent } from '../components/CartComponent/cart.component';
+
 
 const routes: Routes = [
     { 
@@ -28,15 +30,19 @@ const routes: Routes = [
         path:'LandingPage',
         component: LandingPage
     },
+    {
+        path: 'admin',
+        component: AdminComponent
+    },
+    {
+        path: 'cart',
+        component: CartComponent
+    },
     { 
         path: '', 
         redirectTo: 'LandingPage', 
         pathMatch: 'full'
     }, 
-    {
-        path: 'admin',
-        component: AdminComponent
-    }
 ];
 
 @NgModule({

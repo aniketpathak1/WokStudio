@@ -1,0 +1,41 @@
+<h3 align="center">Cart Info</h3>
+<table class="table table-striped" border="1">
+    <thead class="thead-dark">
+        <tr>
+            <th>Option</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of response">
+            <td align="center">
+                <a (click)="remove(item.id)">Delete</a>
+            </td>
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>
+                <img src="../../../assets/Images/{{item.filePath}}"
+                    width="50">
+            </td>
+            <td>{{item.price}}</td>
+            <td>{{quantity}}</td>
+            <td>{{item.price * quantity}}</td>
+        </tr>
+        <tr>
+            <td colspan="6" align="right">
+                <h5>Total</h5>
+            </td>
+            <td>
+                <h5 [(ngModel)]="totalAmount" ngDefaultControl>{{totalAmount}}</h5>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="Submit(Name, price, Image, foodTypeControl, cusineControl, categoryControl)" type="submit" id="but1"
+    class="btn btn-primary">CheckOut</button>
